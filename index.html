@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>张晓东IP·运营作战台 ｜ 可爱潮流艺术馆（内部绝密）</title>
+<style>
+:root{--ink:#10203F;--navy:#16294E;--navyd:#0B1730;--gold:#C9A227;--goldl:#E9D293;--paper:#F6F3EA;--card:#FFF;--pink:#E8538F;--line:#E2DAC4;--gray:#6A7180;--ok:#2E7D52}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:var(--paper);color:var(--ink);line-height:1.65}
+.serif{font-family:"Songti SC","Noto Serif SC","SimSun",serif}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+header{background:linear-gradient(135deg,var(--navyd),var(--navy));color:#fff;padding:24px 18px 16px;position:relative;overflow:hidden}
+header::after{content:"ME";position:absolute;right:-8px;top:-30px;font-size:140px;font-weight:800;color:rgba(201,162,39,.08);font-family:"Songti SC",serif;pointer-events:none}
+.hwrap{max-width:1080px;margin:0 auto;position:relative}
+.badge{display:inline-block;border:1px solid var(--gold);color:var(--goldl);font-size:11px;letter-spacing:.18em;padding:3px 10px;border-radius:2px;margin-bottom:9px}
+header h1{font-family:"Songti SC","Noto Serif SC",serif;font-size:clamp(23px,4.5vw,34px);letter-spacing:.06em}
+header h1 b{color:var(--goldl)}
+header p{color:#B9C4DB;font-size:12.5px;margin-top:6px;max-width:660px}
+nav{background:var(--navyd);padding:12px 12px 15px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.rail{display:flex;gap:9px;max-width:1080px;margin:0 auto;width:max-content;padding:0 4px}
+.tabcard{flex:0 0 auto;background:#13234A;border:1px solid #2B3D6B;color:#D7DEEF;border-radius:8px;padding:8px 13px 7px;min-width:92px;text-align:left;transition:transform .15s,background .15s}
+.tabcard small{display:block;font-size:10px;color:var(--gold);letter-spacing:.14em}
+.tabcard span{font-size:14px;font-weight:600}
+.tabcard:hover{transform:translateY(-2px)}
+.tabcard.on{background:var(--gold);border-color:var(--gold);color:var(--navyd)}
+.tabcard.on small{color:#7a5e0a}
+main{max-width:1080px;margin:0 auto;padding:20px 16px 64px}
+section{display:none}
+section.on{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
+h2.sec{font-family:"Songti SC","Noto Serif SC",serif;font-size:22px;color:var(--navy);border-bottom:2px solid var(--gold);display:inline-block;padding-bottom:4px;margin-bottom:6px}
+.lede{color:var(--gray);font-size:13px;margin-bottom:16px}
+.grid{display:grid;gap:13px}
+@media(min-width:720px){.g2{grid-template-columns:1fr 1fr}.g4{grid-template-columns:repeat(4,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:15px}
+.card h3{font-size:13.5px;color:var(--gray);font-weight:600}
+.kpi{font-family:"Songti SC",serif;font-size:29px;color:var(--navy);margin:3px 0 2px}
+.kpi i{font-style:normal;font-size:13px;color:var(--gold)}
+.note{font-size:12px;color:var(--gray)}
+.pyr{display:flex;flex-direction:column;align-items:center;gap:5px;margin:8px 0 4px}
+.pyr div{background:var(--navy);color:#fff;font-size:12px;text-align:center;padding:6px 8px;border-radius:4px}
+.pyr b{color:var(--goldl)}
+.road{border-left:3px solid var(--gold);padding-left:13px}
+.road h4{font-size:14.5px;color:var(--navy)}
+.road p{font-size:12.5px;color:var(--gray);margin-bottom:9px}
+label.fld{display:block;font-size:12.5px;color:var(--gray);margin:9px 0 3px}
+input[type=number],input[type=text]{width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:6px;font-size:15px;background:#FCFBF7;color:var(--ink)}
+.seg{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+.seg button{border:1px solid var(--line);background:#fff;padding:7px 12px;border-radius:20px;font-size:13px;color:var(--navy)}
+.seg button.on{background:var(--navy);color:var(--goldl);border-color:var(--navy)}
+.report{background:linear-gradient(135deg,var(--navyd),var(--navy));color:#fff;border-radius:12px;padding:18px;border:1px solid var(--gold);position:relative}
+.report::before{content:"战报卡 · BATTLE REPORT";position:absolute;top:10px;right:13px;font-size:10px;letter-spacing:.2em;color:var(--gold)}
+.report .big{font-family:"Songti SC",serif;font-size:36px;color:var(--goldl)}
+.report table{width:100%;border-collapse:collapse;margin-top:8px;font-size:12.5px}
+.report td{padding:5px 0;border-bottom:1px dashed #33446F;color:#C9D3E8}
+.report td:last-child{text-align:right;color:#fff}
+.btn{background:var(--gold);color:var(--navyd);border:none;border-radius:6px;padding:10px 16px;font-size:14px;font-weight:700}
+textarea{width:100%;min-height:150px;padding:10px;border:1px solid var(--line);border-radius:6px;font-size:12.5px;line-height:1.7;background:#FCFBF7;color:var(--ink)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 12px}
+.chips button{border:1px solid var(--line);background:#fff;border-radius:20px;padding:6px 13px;font-size:13px;color:var(--navy)}
+.chips button.on{background:var(--gold);border-color:var(--gold);color:var(--navyd);font-weight:700}
+.cal{display:grid;gap:9px;grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+.day{background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px 12px;cursor:pointer}
+.day:hover{border-color:var(--gold)}
+.dno{font-family:"Songti SC",serif;font-size:15px;color:var(--navy);font-weight:700}
+.day p{font-size:12.5px;margin-top:3px}
+.day.done{background:#F2F6F1;border-color:#BBD6C5}
+.day.done .dno::after{content:" ✓";color:var(--ok)}
+.day.hide{display:none}
+.tag{display:inline-block;font-size:11px;border-radius:3px;padding:0 6px;margin:1px 3px 1px 0;background:#EEF1F8;color:var(--navy);border:1px solid #D9E0EE}
+.pbar{height:8px;background:#E9E4D4;border-radius:5px;overflow:hidden;margin:6px 0 2px}
+.pbar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--goldl))}
+.grp{background:#fff;border:1px solid var(--line);border-radius:10px;padding:13px 15px;margin-bottom:13px}
+.grp h3{font-size:14.5px;color:var(--navy);margin-bottom:3px}
+.grp label{display:flex;gap:9px;align-items:flex-start;font-size:13.5px;padding:6px 0;border-bottom:1px dashed #EFEADA;cursor:pointer}
+.grp label:last-of-type{border-bottom:none}
+.grp input[type=checkbox]{width:17px;height:17px;accent-color:var(--gold);margin-top:3px;flex:0 0 auto}
+.grp label.ck span{color:#9aa0ab;text-decoration:line-through}
+.acc{background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:11px;overflow:hidden}
+.acc>button{width:100%;text-align:left;background:#fff;border:none;padding:13px 15px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.acc h3{font-size:15px;color:var(--navy)}
+.acc small{color:var(--gray);font-size:12px}
+.arr{color:var(--gold);font-size:18px;transition:transform .2s}
+.acc.open .arr{transform:rotate(90deg)}
+.acc .body{display:none;padding:0 16px 13px;border-top:1px dashed var(--line)}
+.acc.open .body{display:block}
+.acc ol{margin:10px 0 0 20px}
+.acc li{font-size:13.5px;padding:3px 0}
+.hook{background:#FBF3DC;border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 6px 6px 0;margin-top:10px;font-size:13.5px}
+.hook b{color:#7a5e0a}
+.plat{border-top:4px solid var(--gold)}
+.plat h3{font-size:17px;color:var(--navy);font-family:"Songti SC",serif}
+.plat .role{color:var(--pink);font-size:12px;font-weight:700;letter-spacing:.1em;margin-bottom:6px}
+.plat dt{color:var(--gray);font-size:11.5px;margin-top:8px;letter-spacing:.05em}
+.plat dd{margin:1px 0 0;font-size:13px}
+.warn{background:#FBF3DC;border:1px solid var(--goldl);border-radius:8px;padding:11px 14px;font-size:12.5px;margin-top:16px}
+.warn.blue{background:#EEF1F8;border-color:#D9E0EE}
+.lever{background:#fff;border:1px solid var(--line);border-left:5px solid var(--pink);border-radius:8px;padding:13px 15px;margin-bottom:11px}
+.lever h3{font-size:15px;color:var(--navy)}
+.lever p{font-size:13px;margin-top:3px}
+.th{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 15px;margin-bottom:10px}
+.th h4{font-size:13.5px;color:#8a1f1f}
+.th p{font-size:12.5px;margin-top:2px}
+.th p b{color:var(--ok)}
+footer{max-width:1080px;margin:0 auto;padding:0 16px 46px;font-size:12px;color:var(--gray)}
+</style>
+</head>
+<body>
+<header><div class="hwrap">
+  <span class="badge">内部绝密 · CONFIDENTIAL · V1.1</span>
+  <h1>张晓东IP <b>·</b> 运营作战台</h1>
+  <p>可爱潮流艺术馆 × WHITE CULTURE MEDIA ｜ 配套《新媒体零成本运营绝密操作手册》使用 ｜ 勾选数据仅保存在当前会话，刷新重置，正式台账请截图归档。</p>
+</div></header>
+<nav><div class="rail" id="rail"></div></nav>
+<main>
+
+<section id="s0" class="on">
+  <h2 class="sec">市场情报 · 总览</h2>
+  <p class="lede">公开口径快照（2026年6月检索；来源：艾媒咨询、QuestMobile、灼识咨询/卡游招股书、泡泡玛特2025年报相关报道）。</p>
+  <div class="grid g4">
+    <div class="card"><h3>谷子经济大盘</h3><div class="kpi serif">2400<i>亿（2025E）</i></div><p class="note">2024年1689亿（+41%）；2027年预计破3000亿</p></div>
+    <div class="card"><h3>集换式卡牌</h3><div class="kpi serif">299<i>亿（2025E）</i></div><p class="note">2024年约263亿，潮玩中增速最快细分</p></div>
+    <div class="card"><h3>卡游（龙头）</h3><div class="kpi serif">100.5<i>亿营收</i></div><p class="note">2024年经调净利约44亿；份额71.1%；IP全靠租（年授权费7.68亿）</p></div>
+    <div class="card"><h3>泡泡玛特</h3><div class="kpi serif">371.2<i>亿（2025）</i></div><p class="note">LABUBU系列141.6亿、占38.1%→单一IP依赖被市场惩罚，矩阵化是必修课</p></div>
+  </div>
+  <div class="grid g2" style="margin-top:13px">
+    <div class="card">
+      <h3>五层收益金字塔（L3引流→L4留存→L2变现→L1封神→L5躺赚）</h3>
+      <div class="pyr">
+        <div style="width:42%"><b>L1</b> 原作 5万–50万+/件</div>
+        <div style="width:58%"><b>L2</b> 限量版画/雕塑 2980–29800</div>
+        <div style="width:74%"><b>L3</b> 卡牌＋谷子 29–399</div>
+        <div style="width:88%"><b>L4</b> 体验与内容 9.9–399</div>
+        <div style="width:100%"><b>L5</b> B端授权 保底＋分成</div>
+      </div>
+      <p class="note">定位：<b style="color:var(--gold)">「被美术馆收藏的卡牌」</b>——学术权威给29元定价，29元给百万原作引流。</p>
+    </div>
+    <div class="card"><h3>90天路线图</h3>
+      <div class="road" style="margin-top:8px">
+        <h4>D1–30 蓄水</h4><p>四平台开号·访谈拍摄·人物内容铺量·卡牌厂谈判｜全网1.5万粉、爆款≥2条</p>
+        <h4>D31–60 引爆</h4><p>首弹众筹/预售·拆卡首播·美术馆拆卡日｜首弹售罄、GMV≥15万</p>
+        <h4>D61–90 增长</h4><p>二弹预售·版画上探·B端授权≥1单｜累计GMV≥40万、藏家线索≥30条</p>
+      </div>
+    </div>
+  </div>
+  <div class="warn">⚖ <b>合规即护城河：</b>不向8周岁以下销售 · 概率全公示 · 不空盒不操纵 · 抽奖式奖品单项≤5万元（原作只售不抽）· 禁用「升值/保值/投资回报」。</div>
+  <div class="warn blue">🌐 <b>发布本工具（零成本）：</b>①在Claude预览右上角点「发布」生成公开链接；或②上传本HTML至GitHub Pages/Netlify免费托管。对外发布前删除内部数据模块。</div>
+</section>
+
+<section id="s1">
+  <h2 class="sec">收益计算器</h2>
+  <p class="lede">调整假设→实时生成月度与90天战报。毛利口径：卡牌/谷子88%、版画85%；合作模式决定我方分成。</p>
+  <div class="grid g2">
+    <div class="card">
+      <label class="fld">合作模式（卡牌/谷子线）</label>
+      <div class="seg" id="modeSeg">
+        <button data-m="1">全自营（100%）</button>
+        <button data-m="0.5" class="on">联合出品（净利50%）</button>
+        <button data-m="0.12">纯授权（流水12%）</button>
+      </div>
+      <label class="fld">每月直播场次</label><input type="number" id="i_shows" value="8" min="0">
+      <label class="fld">场均观看人数</label><input type="number" id="i_view" value="800" min="0">
+      <label class="fld">观看→下单转化率（%）</label><input type="number" id="i_cvr" value="1.5" step="0.1" min="0">
+      <label class="fld">直播客单价（元）</label><input type="number" id="i_aov" value="120" min="0">
+      <label class="fld">短视频/货架 月GMV（元）</label><input type="number" id="i_shelf" value="8000" min="0">
+      <label class="fld">版画 月成交张数（自营）</label><input type="number" id="i_pq" value="2" min="0">
+      <label class="fld">版画 均价（元）</label><input type="number" id="i_pp" value="4800" min="0">
+      <label class="fld">B端授权 月流水（元，分成12%）</label><input type="number" id="i_lic" value="0" min="0">
+    </div>
+    <div>
+      <div class="report" id="report"></div>
+      <p class="note" style="margin-top:9px">测算为情景假设，不构成业绩承诺；每周五以真实数据回填校准（手册10.2）。</p>
+    </div>
+  </div>
+</section>
+
+<section id="s2">
+  <h2 class="sec">卡牌配置器 · 概率公示生成</h2>
+  <p class="lede">第一弹《欲望天使·觉醒》参数台：调整稀有度与定价→自动算毛利并生成合规公示文案。</p>
+  <div class="grid g2">
+    <div class="card">
+      <label class="fld">单包零售价（元，5张/包）</label><input type="number" id="c_price" value="29">
+      <label class="fld">单包综合成本（元）</label><input type="number" id="c_cost" value="2.8" step="0.1">
+      <label class="fld">闪卡SR：平均每N包出1张</label><input type="number" id="c_sr" value="3">
+      <label class="fld">超闪SSR：平均每N包出1张</label><input type="number" id="c_ssr" value="10">
+      <label class="fld">签名卡SP：平均每N包出1张（1盒=10包）</label><input type="number" id="c_sp" value="10">
+      <label class="fld">手绘卡UR：平均每N包出1张（1箱=100包）</label><input type="number" id="c_ur" value="100">
+      <label class="fld">兑换卡：平均每N包出1张（标的≤5万元）</label><input type="number" id="c_ex" value="200">
+      <button class="btn" style="margin-top:13px" onclick="copyText()">复制公示文案</button>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:11px"><h3>经济测算</h3><div class="kpi serif" id="c_margin">—</div><p class="note" id="c_detail"></p></div>
+      <div class="card"><h3>概率公示文案（详情页/直播间贴片）</h3><textarea id="c_text" readonly></textarea></div>
+      <div class="grp" style="margin-top:11px"><h3>上架前合规自检（全勾方可开售）</h3>
+        <label><input type="checkbox"><span>详情页、外包装、直播间三处标注「不向未满8周岁未成年人销售；8周岁以上未成年人购买须征得监护人同意」</span></label>
+        <label><input type="checkbox"><span>全部概率已公示且与实际配比一致（不空包不空盒、不后台调整）</span></label>
+        <label><input type="checkbox"><span>兑换/抽奖标的单项价值≤5万元；原作只售不抽</span></label>
+        <label><input type="checkbox"><span>文案与口播无「升值/保值/投资/以小博大/必出」等禁语</span></label>
+        <label><input type="checkbox"><span>预售明示发货时间；未成年人退款通道就绪</span></label>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s3">
+  <h2 class="sec">30天冷启动日历</h2>
+  <p class="lede">点击卡片标记完成；平台筛选查看当日动作。节奏：W1人物→W2过程→W3悬念→W4引爆。</p>
+  <div class="chips" id="calChips"></div>
+  <div class="pbar"><i id="calBar" style="width:0%"></i></div>
+  <p class="note" id="calStat" style="margin-bottom:11px"></p>
+  <div class="cal" id="cal"></div>
+</section>
+
+<section id="s4">
+  <h2 class="sec">现场拍摄清单</h2>
+  <p class="lede">全部4K横版拍摄（竖版后期裁切），每镜≥8秒留余量。勾选即记录进度。</p>
+  <div class="pbar"><i id="shotBar" style="width:0%"></i></div>
+  <p class="note" id="shotStat" style="margin-bottom:11px"></p>
+  <div id="shots"></div>
+</section>
+
+<section id="s5">
+  <h2 class="sec">访谈提纲 · 十板块六十问</h2>
+  <p class="lede">总则：让他<b>重述场景</b>而非评价；追问数字与具体物件；答完沉默三秒；★钩子问题为切片爆点务必拍到。一次拍摄＝1支主片＋30条切片。</p>
+  <div id="itv"></div>
+</section>
+
+<section id="s6">
+  <h2 class="sec">四大平台打法卡</h2>
+  <p class="lede">同一素材、四种剪法、错峰发布；账号视觉统一（ME形象＋金色描边）。</p>
+  <div class="grid g2" id="plats"></div>
+</section>
+
+<section id="s7">
+  <h2 class="sec">落地巧劲 · 真实门槛与72小时清单</h2>
+  <p class="lede">方案能否跑通，取决于跨过门槛的速度与杠杆的成色。以下为真实市场的硬约束与本案独有的零成本杠杆。</p>
+  <h3 style="font-size:15px;color:#8a1f1f;margin:6px 0 8px">一、必须先跨过的六道硬门槛</h3>
+  <div id="ths"></div>
+  <h3 style="font-size:15px;color:var(--pink);margin:18px 0 8px">二、五个零成本巧劲（本案真正的胜负手）</h3>
+  <div id="levers"></div>
+  <h3 style="font-size:15px;color:var(--navy);margin:18px 0 8px">三、72小时启动清单（签发即执行）</h3>
+  <div class="pbar"><i id="lBar" style="width:0%"></i></div>
+  <p class="note" id="lStat" style="margin-bottom:10px"></p>
+  <div id="launch"></div>
+</section>
+
+<section id="s8">
+  <h2 class="sec">二次开发 · IP宇宙路线图</h2>
+  <p class="lede">卡牌解决冷启动与现金流；二次开发解决利润纵深与IP寿命。原则：优先做「原画即素材、零绘制成本」的形态——三十年作品库直接变产能。完整方案、分镜脚本与直播逐字稿见《卷二·实战补充包》。</p>
+  <div class="grid g4">
+    <div class="card"><h3>微短剧大盘</h3><div class="kpi serif">1000<i>亿+（2025）</i></div><p class="note">较2024年翻番；2026年预计1200亿</p></div>
+    <div class="card"><h3>微短剧用户</h3><div class="kpi serif">近7<i>亿人</i></div><p class="note">占网民近七成；人均日观看129分钟，已超长视频</p></div>
+    <div class="card"><h3>AI内容爆发</h3><div class="kpi serif">20<i>亿条（2025）</i></div><p class="note">AI视音频较上年增长14倍+；AI短视频/AI微短剧居前两位</p></div>
+    <div class="card"><h3>内容即货架</h3><div class="kpi serif">58<i>%</i></div><p class="note">用户因视听内容购买了从未买过的商品——五层金字塔的官方注脚</p></div>
+  </div>
+  <h3 style="font-size:15px;color:var(--pink);margin:16px 0 8px">优先级矩阵（P0先行）</h3>
+  <div class="lever"><h3>P0 ① 微信表情包《ME的小情绪》16枚</h3><p>0元成本、约30天上线（含审核）。亿级免费曝光管道：用户每发送一次=一次品牌曝光，详情页导流公众号；设计直接取自现有作品（含泪大眼=「委屈」、胖胖=「红包来了」）。需备著作权登记证明。</p></div>
+  <div class="lever"><h3>P0 ② AI动态漫·微短剧《ME的小世界》</h3><p>60–90秒竖屏×24集季播，零对白视觉叙事；AI图生视频让原画局部动起来＋剪映合成，1名剪辑周产2集，首集14天上线。发行：抖音＋B站动态漫；不走付费投流，定位「品牌内容＋IP养成」——每集片尾挂当集原作的卡牌/版画链接，内容即货架。</p></div>
+  <div class="lever" style="border-left-color:var(--gold)"><h3>P1 画册众筹 ＋ 谷子授权扩品</h3><p>《可爱三十年》画册B站会员购/摩点预售制零垫资（平装199/精装亲签499/收藏版1999限99套）；毛绒、吧唧、立牌走授权分成，45天起量。</p></div>
+  <div class="lever" style="border-left-color:#9aa0ab"><h3>P2 实体绑定数字证书 ＋ 番剧/游戏联名</h3><p>不做炒作型数字藏品（市场已降温、与艺术家长期信用不匹配）；只做版画/手绘卡的防伪确权证书——「我们出售艺术，不出售涨跌」。番剧与游戏联名待IP热度达标后由对方出资。</p></div>
+  <div class="warn">⚖ <b>二次开发合规：</b>AI生成内容须显式标识（《人工智能生成合成内容标识办法》2025年9月1日施行）· 微短剧2026年起按投资额分类分层审核，须经平台登记报备（未备案已有大规模下架先例）· 画册须正规书号 · 全线禁用「升值/保值/投资回报」。</div>
+</section>
+
+</main>
+<footer>数据来源：艾媒咨询 / QuestMobile / 灼识咨询（卡游招股书）/ 泡泡玛特2025年报公开报道 / 国家市场监管总局《盲盒经营行为规范指引（试行）》。平台入驻规则随时调整，开通前以平台当月《类目资质要求》为准。测算均为情景假设。© 2026 可爱潮流艺术馆 · 内部使用</footer>
+
+<script>
+/* tabs */
+const TABS=[["R","总览"],["SSR","收益计算"],["SP","卡牌配置"],["SR","30天日历"],["SR","拍摄清单"],["UR","访谈提纲"],["SR","平台打法"],["UR","落地巧劲"],["SSR","二次开发"]];
+const rail=document.getElementById('rail');
+TABS.forEach((t,i)=>{const b=document.createElement('button');b.className='tabcard'+(i===0?' on':'');b.innerHTML=`<small>${t[0]}</small><span>${t[1]}</span>`;
+b.onclick=()=>{document.querySelectorAll('.tabcard').forEach(x=>x.classList.remove('on'));document.querySelectorAll('main section').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.getElementById('s'+i).classList.add('on');window.scrollTo({top:0,behavior:'smooth'});};rail.appendChild(b);});
+
+/* calculator */
+let mode=0.5;
+document.querySelectorAll('#modeSeg button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#modeSeg button').forEach(x=>x.classList.remove('on'));b.classList.add('on');mode=parseFloat(b.dataset.m);calc();});
+const $v=id=>parseFloat(document.getElementById(id).value)||0;
+const fmt=n=>n>=10000?(n/10000).toFixed(1).replace(/\.0$/,'')+' 万':Math.round(n).toLocaleString('zh-CN');
+function calc(){
+  const live=$v('i_shows')*$v('i_view')*($v('i_cvr')/100)*$v('i_aov');
+  const cardG=live+$v('i_shelf'), printG=$v('i_pq')*$v('i_pp'), licG=$v('i_lic');
+  const cardIn=(mode===0.12)?cardG*0.12:cardG*0.88*mode;
+  const printIn=printG*0.85, licIn=licG*0.12, net=cardIn+printIn+licIn;
+  document.getElementById('report').innerHTML=`<div class="big">¥ ${fmt(net)}</div><div style="font-size:12px;color:#C9D3E8;letter-spacing:.08em">预计月度净收入（我方口径）</div>
+  <table><tr><td>直播带货 GMV</td><td class="mono">¥ ${fmt(live)}</td></tr>
+  <tr><td>短视频/货架 GMV</td><td class="mono">¥ ${fmt($v('i_shelf'))}</td></tr>
+  <tr><td>卡牌线我方收入（${mode===0.12?'流水12%':'毛利88%×'+(mode*100)+'%分成'}）</td><td class="mono">¥ ${fmt(cardIn)}</td></tr>
+  <tr><td>版画收入（自营，毛利85%）</td><td class="mono">¥ ${fmt(printIn)}</td></tr>
+  <tr><td>B端授权收入（12%）</td><td class="mono">¥ ${fmt(licIn)}</td></tr>
+  <tr><td>月度总 GMV</td><td class="mono">¥ ${fmt(cardG+printG+licG)}</td></tr>
+  <tr><td><b style="color:#E9D293">90天累计净收入（×3）</b></td><td class="mono" style="color:#E9D293;font-weight:700">¥ ${fmt(net*3)}</td></tr></table>`;
+}
+document.querySelectorAll('#s1 input').forEach(i=>i.addEventListener('input',calc));
+
+/* card configurator */
+function cardCalc(){
+  const p=$v('c_price'),c=$v('c_cost'),m=p>0?((p-c)/p*100):0;
+  document.getElementById('c_margin').innerHTML=m.toFixed(1)+'<i> % 单包毛利率</i>';
+  document.getElementById('c_detail').textContent=`单包毛利 ¥${(p-c).toFixed(1)}；整盒（10包）建议 ¥${(p*10).toFixed(0)} 附盒卡；原箱（100包）建议 ¥${(p*100).toFixed(0)} 附箱卡。`;
+  const rate=n=>n>0?`平均每 ${n} 包出现1张（单包约 ${(100/n).toFixed(1)}%）`:'未设置';
+  document.getElementById('c_text').value=
+`【概率公示】《欲望天使·觉醒》集换式卡牌\n本系列每包含卡牌5张，零售价 ${p} 元/包，不设空包、空盒。\n· 普卡R：每包均含；\n· 闪卡SR：${rate($v('c_sr'))}；\n· 超闪SSR：${rate($v('c_ssr'))}；\n· 签名卡SP：${rate($v('c_sp'))}；\n· 手绘卡UR（艺术家真迹1/1，附证书）：${rate($v('c_ur'))}；\n· 兑换卡（版画/美术馆体验，标的价值不超过5万元）：${rate($v('c_ex'))}。\n以上概率为真实投放配比，本店不进行后台调整。本商品不向未满8周岁未成年人销售；8周岁以上未成年人购买须征得监护人同意。请理性消费。`;
+}
+function copyText(){const t=document.getElementById('c_text');t.select();try{document.execCommand('copy');alert('公示文案已复制');}catch(e){alert('请手动长按复制');}}
+document.querySelectorAll('#s2 input[type=number]').forEach(i=>i.addEventListener('input',cardCalc));
+
+/* 30-day calendar */
+const CAL=[
+[1,["抖","红","B"],"《被M+收藏的人在画什么》三平台首发"],
+[2,["抖"],"切片《30年前我去日本学画》"],
+[3,["抖","红"],"收藏证书「证据感」视频（1995中国美术馆）"],
+[4,["红"],"美术馆出片攻略（图文：机位+穿搭）"],
+[5,["抖"],"切片《这双眼睛画了11个小时》"],
+[6,["播"],"首场「工作室陪画」直播（不卖货养标签）"],
+[7,["微"],"公众号开号长文《张晓东的三十年》"],
+[8,["B","抖"],"《一张画的诞生》第1集（长短双版）"],
+[9,["红"],"调色盘ASMR微距"],
+[10,["抖"],"切片《胖胖存的不是钱，是欲望》"],
+[11,["抖"],"创作延时卡点视频（热门BGM）"],
+[12,["红"],"探馆vlog（绑定POI吃同城流量）"],
+[13,["B"],"主纪录片上线＋全网导流"],
+[14,["播"],"陪画直播第2场＋周复盘"],
+[15,["抖","红"],"卡牌谍照：只露卡角与流光，评论猜系列"],
+[16,["抖"],"切片《把作品做成卡牌，会掉价吗？》"],
+[17,["抖","红"],"镭射工艺微距揭秘"],
+[18,["微"],"公众号深度文《为什么是卡牌》"],
+[19,["抖","B","红","微"],"概率全文公示＋线上图鉴开放"],
+[20,["红"],"卡册陈列种草笔记"],
+[21,["播"],"预售倒计时直播（白样展示＋定金通道）"],
+[22,["B","抖"],"B站众筹＋抖音预售双通道开启"],
+[23,["播"],"首场拆卡直播（艺术家露脸10分钟讲故事）"],
+[24,["抖"],"拆卡直播高光切片"],
+[25,["红","抖"],"晒单返场＋亲签海报抽奖（奖品合规）"],
+[26,["B"],"众筹进度答疑视频"],
+[27,["播"],"第二场拆卡直播"],
+[28,["抖","红","B","微"],"售罄海报／二弹预告"],
+[29,["微","馆"],"私域周报＋美术馆拆卡日报名开启"],
+[30,["抖","红","B","微"],"30天数据复盘海报＋下月预告"]];
+const PNAMES={"抖":"抖音","B":"B站","红":"小红书","微":"微信","播":"直播","馆":"线下"};
+let calFilter="全部"; const calDone=new Set();
+function renderChips(){
+  const c=document.getElementById('calChips'); c.innerHTML='';
+  ["全部","抖","B","红","微","播","馆"].forEach(k=>{
+    const b=document.createElement('button'); b.textContent=k==="全部"?"全部":PNAMES[k];
+    if(k===calFilter)b.classList.add('on');
+    b.onclick=()=>{calFilter=k;renderChips();renderCal();}; c.appendChild(b);});
+}
+function renderCal(){
+  const w=document.getElementById('cal'); w.innerHTML='';
+  CAL.forEach(d=>{
+    const show=calFilter==="全部"||d[1].includes(calFilter);
+    const el=document.createElement('div'); el.className='day'+(calDone.has(d[0])?' done':'')+(show?'':' hide');
+    el.innerHTML=`<div class="dno">D${d[0]}</div><div>${d[1].map(p=>`<span class="tag">${PNAMES[p]}</span>`).join('')}</div><p>${d[2]}</p>`;
+    el.onclick=()=>{calDone.has(d[0])?calDone.delete(d[0]):calDone.add(d[0]);renderCal();};
+    w.appendChild(el);});
+  const pct=Math.round(calDone.size/30*100);
+  document.getElementById('calBar').style.width=pct+'%';
+  document.getElementById('calStat').textContent=`已完成 ${calDone.size} / 30 天（${pct}%）`;
+}
+
+/* shooting checklist */
+const SHOTS=[
+["场景A｜美术馆外景（8）",["日出/日落侧光建筑全景（固定30秒）","水面倒影对称构图","大老鼠雕塑环绕运镜一周","「可爱潮流艺术馆」招牌特写推近","圆形门洞框景拍建筑","观众进馆背影跟拍","周浦公园绿意空镜","阴/晴各补一版（天气备份）"]],
+["场景B｜一楼展厅（10）",["入口推门POV一镜到底","绿色展墙长廊横移（手机贴行李箱模拟滑轨）","单幅作品由虚到实对焦","作品「眼睛高光」微距（台灯点光）","雕塑360°环绕","雕塑与观众同框比例镜头","展签特写（作品名/年份）","灯光开启瞬间（关→开）","观众驻足剪影","地面彩绘俯拍"]],
+["场景C｜二楼工作室（12）",["画架全景定场（晨光版+灯光版）","调色盘俯拍特写（湿颜料反光）","笔触微距：颜料离笔瞬间（4倍慢动作）","执笔手部特写（常速+慢动作）","创作延时：固定机位2–4小时压成30秒","艺术家窗边剪影","长桌生活区纪实（茶杯/画册/花）","颜料管阵列特写","未完成稿与完成稿同框","签名落款慢镜","后退端详画面的「呼吸镜头」","工作室全景环绕收尾"]],
+["场景D｜文献证据（6）",["1995收藏证书：开盒-翻开-特写三段式","开幕式老照片逐张翻拍（侧光去反光）","CHINESE WHISPERS画册翻页（手入镜）","历年展览海报墙横移","早期手稿特写","日本时期物件（车票/请柬，如有）"]],
+["场景E｜卡牌产品（8）",["镭射卡转动流光微距（点光源侧打）","拆包慢动作：撕开瞬间240fps","卡面与原作同框（卡前景、原作虚化）","卡墙/卡册陈列横移","手绘1/1卡创作过程实拍","整盒/原箱开箱俯拍","概率公示页录屏","美术馆打包发货vlog素材"]],
+["场景F｜人物形象（6）",["白西装缓慢转身看镜头（电影感）","工作服满身颜料反差版同机位","与大老鼠雕塑对视幽默镜头","站在1995年老照片前「今昔同框」","走过作品长廊的跟拍背影","执画笔向镜头点画「第四面墙」互动"]]];
+const shotState=new Map();
+function renderShots(){
+  const w=document.getElementById('shots'); w.innerHTML=''; let total=0,done=0;
+  SHOTS.forEach(([g,items],gi)=>{
+    const grp=document.createElement('div'); grp.className='grp';
+    grp.innerHTML=`<h3>${g}</h3>`;
+    items.forEach((it,ii)=>{
+      const key=gi+'-'+ii; total++; if(shotState.get(key))done++;
+      const lab=document.createElement('label'); if(shotState.get(key))lab.classList.add('ck');
+      lab.innerHTML=`<input type="checkbox" ${shotState.get(key)?'checked':''}><span>${it}</span>`;
+      lab.querySelector('input').onchange=e=>{shotState.set(key,e.target.checked);renderShots();};
+      grp.appendChild(lab);});
+    w.appendChild(grp);});
+  const pct=total?Math.round(done/total*100):0;
+  document.getElementById('shotBar').style.width=pct+'%';
+  document.getElementById('shotStat').textContent=`已完成 ${done} / ${total} 镜（${pct}%）`;
+}
+
+/* interview */
+const ITV=[
+["板块一｜起点：唐山的纸片戏","8分钟",["小时候用药瓶和小纸片演戏——还记得某个具体故事吗？角色叫什么？","父母做表演艺术，家里饭桌上聊艺术吗？聊什么？","第一次意识到「我会画画」是哪一刻？画的什么？","童年的唐山留下最深的一个画面是什么？","家里人支持考美术系吗？有反对的声音吗？"],"如果现在能对那个玩纸片的小孩说一句话，您说什么？"],
+["板块二｜学院与叛逆：从写实到表现","6分钟",["1991年首师大毕业，写实功底很好——为什么偏偏「不想画得像」了？","第一次画「不像」的画，老师什么反应？","1991年北京青年美术展（中国美术馆），那时北京艺术圈什么气氛？","表现主义阶段，您在表现什么？"],"「画得像」和「画得对」，差别是什么？"],
+["板块三｜旅日三十年：被「可爱」击中","10分钟",["1992年刚落地名古屋，第一个让您愣住的画面？","爱知县立艺大读研，日本老师怎么看您这个中国学生？","「卡通无处不在」——具体在哪一刻意识到的？便利店？电车？","当时中国艺术圈怎么看卡通？决定转向时怕过吗？","2000年APA画廊第一次卡通个展——卖出去了吗？第一个买家是谁？","在日本三十年，最孤独的一个晚上怎么过的？"],"日本给了您「可爱」，您想还给中国什么？"],
+["板块四｜1995：中国美术馆的高光","8分钟",["27岁在中国美术馆办个展——放今天相当于什么？当时知道意味着什么吗？","开幕式那天早上您在做什么？到场的第一位重要嘉宾是谁？","靳尚谊先生看画时说了什么？","《寻梦》《有鸟的风景》被收藏——收到证书那天的情形？证书现在放哪？（镜头：现场取证书翻拍）","央视《张晓东的表现主义》播出后，生活有变化吗？"],"30年后回头看，那次个展给您最大的礼物是什么？"],
+["板块五｜大款猫与胖胖：符号的诞生","8分钟",["为什么给熊猫的脸换成人民币符号？第一张「大款猫」在什么状态下画出来？","有人说您讽刺拜金——接受「讽刺」这个词吗？","2008年《卡通艺术船》是当时中国最大户外卡通装置——最大的困难是什么？","胖胖的原型是存钱罐——它存的是钱，还是欲望？","把蒙娜丽莎、向日葵都画上¥——不怕被骂亵渎经典吗？"],"如果钱有一张脸，它现在对中国人是什么表情？"],
+["板块六｜希克与M+：走进世界收藏","6分钟",["2012年乌利·希克来看展那天——他在哪张画前站得最久？","他挑走的是哪两张？当时说了什么？","得知作品被捐给香港M+成为创始收藏——您在哪儿、怎么知道的？","作品和全球当代艺术同一个屋檐下，您去现场看过吗？"],"一个瑞士人读懂了您画里的中国——他读懂的是什么？"],
+["板块七｜可爱美学：理论核心","8分钟",["「可爱不是艺术本身，是艺术与大众互动的媒介」——这句话怎么来的？","「甜美的外表，现实的内核」——能用一张画现场拆解一次吗？（走到作品前）","可爱会消解批判性吗？还是恰恰相反？","您画的大眼睛总含着一点泪光——是故意的吗？","「寓意再生」：龙、门神、年画进入卡通——改造传统时什么不能动？"],"为什么这个时代的中国人，这么需要「可爱」？"],
+["板块八｜ME世代：与年轻人对话","6分钟",["ME系列的「ME」——是自恋，还是自救？","2020年您把自拍杆画进了画里——您刷短视频吗？","年轻人一边说躺平，一边为谷子和卡牌排队——怎么看这种矛盾？","《自恋时代》里举自拍杆的小孩，她快乐吗？"],"如果ME会说话，她最想对屏幕前的年轻人说哪句话？"],
+["板块九｜争议与回应（为发售埋雷）","6分钟",["「卡通不算严肃艺术」听了三十年——现在还会生气吗？","把作品做成29元一包的卡牌——会不会「掉价」？（此答即发售期官方回应素材，引导完整表达）","美术馆收藏的作品和孩子手里的卡片，是同一件作品吗？","如果有藏家说「您不该做衍生品」，您怎么回？"],"艺术到底应该挂在墙上，还是应该揣进口袋？"],
+["板块十｜此刻与未来","6分钟",["57岁，现在每天画几个小时？几点起床？","二楼这间工作室，最喜欢哪个角落？","还有什么想画而没画的？","希望一百年后人们提起张晓东，想到的第一个词是什么？"],"如果一个孩子抽到了您亲手画的那张1/1卡——您想对TA说什么？（全片收尾金句）"]];
+function renderItv(){
+  const w=document.getElementById('itv');
+  ITV.forEach(([t,m,qs,hook])=>{
+    const a=document.createElement('div'); a.className='acc';
+    a.innerHTML=`<button><div><h3>${t}</h3><small>约${m} · ${qs.length+1}问</small></div><span class="arr">▸</span></button>
+    <div class="body"><ol>${qs.map(q=>`<li>${q}</li>`).join('')}</ol><div class="hook"><b>★ 钩子：</b>${hook}</div></div>`;
+    a.querySelector('button').onclick=()=>a.classList.toggle('open');
+    w.appendChild(a);});
+}
+
+/* platforms */
+const PLATS=[
+["抖音","主战场 · 转化",[["账号","「张晓东和他的大眼睛」（艺术家号）＋「可爱潮流艺术馆」（机构号，绑POI吃同城）"],["内容配比","过程40%＋人物30%＋产品20%＋热点10%；前3秒钩子：反差/悬念/证据"],["直播","周三陪画直播（养号）＋周六上新/拆卡直播（转化）"],["变现","抖音小店（卡牌类目准入见「落地巧劲」）、直播带货"],["KPI","90天3–5万粉；破50万播放≥2条；单场GMV破万"]]],
+["哔哩哔哩","信任 · 深度",[["主片","《被M+收藏的中国艺术家，为什么去画「可爱」？》10–15分钟纪录片"],["系列","《一张画的诞生》每集5–8分钟4K过程"],["变现","会员购众筹（首弹卡牌的零库存预售通道）、充电"],["KPI","90天1万粉；主片播放≥20万；众筹≥10万元"]]],
+["小红书","种草 · 女性向",[["内容","高清作品图+创作故事（图文养搜索）／拆卡开箱vlog／美术馆出片攻略"],["卡位","承接 #小马宝莉卡 #拆卡 外溢流量，建 #艺术家卡牌 #张晓东 词条"],["运营","官方群聊做换卡接龙与拆卡日报名"],["KPI","90天1万粉；千赞爆文≥3篇；店铺月销≥3万"]]],
+["微信","私域 · 高客单",[["矩阵","公众号深度长文＋视频号「馆长夜话」直播＋企微1v1收藏顾问＋小程序商城"],["私域分层","卡友群→藏家群（邀请制）；包裹卡扫码统一入口"],["成交","版画与原作在企微1v1与美术馆私享会完成"],["KPI","私域≥2000人；藏家线索≥30条；版画≥10张"]]]];
+function renderPlats(){
+  const w=document.getElementById('plats');
+  PLATS.forEach(([n,role,rows])=>{
+    const c=document.createElement('div'); c.className='card plat';
+    c.innerHTML=`<h3>${n}</h3><div class="role">${role}</div><dl>${rows.map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl>`;
+    w.appendChild(c);});
+}
+
+/* landing: thresholds + levers + 72h */
+const THS=[
+["经营主体与店铺资质","平台开店、众筹入驻均需营业执照。","解法：直接复用白色系文化现有公司主体——执照、对公账户、商标主体一步到位，零新增成本。"],
+["抖音卡牌类目准入（报白）","集换式卡牌/收藏卡类目实行准入管理，需提交品牌与授权链路资质（以平台当月规则为准）。","解法：我方即IP权利人，自有品牌授权链路天然完整；审核期内由合作厂方店铺代销过渡，不停售。"],
+["拆卡直播专项治理","平台严打赌性话术与未成年下单，央视已多次曝光行业乱象。","解法：手册八/九章合规SOP全员执行——合规是准入券，也是「美术馆级拆卡」的品牌差异。"],
+["B站会员购/众筹审核","企业入驻＋类目审核约需1–2周。","解法：D1当天提交，绝不等到第19天卡进度。"],
+["微信小店与小程序","需企业主体；类目保证金各异。","解法：白色系主体直开；前期可用视频号橱窗＋微店过渡。"],
+["履约时效","预售须明示发货期，平台考核揽收时效。","解法：美术馆即仓，签1家上门揽件快递月结；打包过程拍成vlog反哺内容。"]];
+const LEVERS=[
+["巧劲① 白色系艺人矩阵（最大杠杆）","经纪公司自有艺人/达人晒卡、探馆、连麦——市场价数十万的KOL投放，内部排期即零成本。首发周固定动作：3位艺人各发1条＋1场直播连麦，冷启动直接跳过「无人问津期」。"],
+["巧劲② 上海主场节点借势","首弹定档7月：CCG EXPO与BilibiliWorld均在上海，全国二次元客流送上门（可办场外「美术馆拆卡日」承接）；11月ART021艺博会推「艺博会限定金标盒」，把高净值藏家现场变成版画/原作转化场——参展资料已就绪。"],
+["巧劲③ 美术馆「场景即资质」","平台审核、厂方谈判、媒体报道三件事里，实体美术馆都是最强信任状；「全国首个美术馆拆卡日」是天然热搜标题，邀上海本地媒体做成事件。"],
+["巧劲④ 先众筹后报白","B站众筹合规预售先收钱验证需求，再拿真实众筹数据反向敲开抖音类目准入与厂方账期——用数据代替垫资。"],
+["巧劲⑤ 反向授权定价","对厂方不收授权费，改「零保底＋高分成＋我方包全网内容」，把对方风险压到零换取首弹30天内签约——用速度抢市场窗口，二弹再谈保底。"]];
+const LAUNCH=[
+["第1天｜主体与账号",["四平台账号注册＋企业认证全部提交（白色系执照）","企业微信开通，客服话术库导入","B站会员购入驻申请提交","快递月结洽谈（上门揽件）"]],
+["第2天｜法务与谈判",["10件核心作品著作权登记提交","商标6类（9/14/16/28/35/41）检索并提交","向2–3家卡牌厂发出合作简版BP（手册一/二/三章）＋约谈","抖音卡牌类目准入材料预审"]],
+["第3天｜内容与开机",["按场景A/B/D拍满20条素材入库","锁定艺术家访谈档期（半天）","剪出首周7条视频＋封面","30天日历启用，本作战台全员上手"]]];
+function renderLand(){
+  const t=document.getElementById('ths');
+  THS.forEach(([h,p,s])=>{const d=document.createElement('div');d.className='th';d.innerHTML=`<h4>⛔ ${h}</h4><p>${p}<br><b>✔ ${s}</b></p>`;t.appendChild(d);});
+  const l=document.getElementById('levers');
+  LEVERS.forEach(([h,p])=>{const d=document.createElement('div');d.className='lever';d.innerHTML=`<h3>${h}</h3><p>${p}</p>`;l.appendChild(d);});
+  renderLaunch();
+}
+const lState=new Map();
+function renderLaunch(){
+  const w=document.getElementById('launch'); w.innerHTML=''; let total=0,done=0;
+  LAUNCH.forEach(([g,items],gi)=>{
+    const grp=document.createElement('div'); grp.className='grp'; grp.innerHTML=`<h3>${g}</h3>`;
+    items.forEach((it,ii)=>{const key=gi+'-'+ii; total++; if(lState.get(key))done++;
+      const lab=document.createElement('label'); if(lState.get(key))lab.classList.add('ck');
+      lab.innerHTML=`<input type="checkbox" ${lState.get(key)?'checked':''}><span>${it}</span>`;
+      lab.querySelector('input').onchange=e=>{lState.set(key,e.target.checked);renderLaunch();};
+      grp.appendChild(lab);});
+    w.appendChild(grp);});
+  const pct=total?Math.round(done/total*100):0;
+  document.getElementById('lBar').style.width=pct+'%';
+  document.getElementById('lStat').textContent=`72小时清单：已完成 ${done} / ${total} 项（${pct}%）`;
+}
+
+/* init */
+calc();cardCalc();renderChips();renderCal();renderShots();renderItv();renderPlats();renderLand();
+</script>
+</body>
+</html>
